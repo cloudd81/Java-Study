@@ -24,14 +24,15 @@ public class Test07_quiz {
         char b;
         for(int i=0; i<str.length(); i++) {
         	b=str.charAt(i);
-        	if(b>=65 && b<=90) {
-        		b+=32;
-        	} else if(b>96 && b<123) {
-        		b-=32;
-        	}
+        	if(Character.isUpperCase(b)) {
+        		System.out.print(Character.toLowerCase(b));
+        	} else if(Character.isLowerCase(b)) {
+        		System.out.print(Character.toUpperCase(b));
+        	} else {
         	System.out.print(b);
-        }
-        System.out.println();
-	}
-
-}
+        	} // if end
+        } // for end
+        
+        
+	} // main() end
+} // class end
