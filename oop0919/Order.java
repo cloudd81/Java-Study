@@ -22,18 +22,31 @@ public class Order {
 		this.myMoney=this.myMoney-p.price;			// 나의 재산은 감소
 		this.myMileage=this.myMileage+p.bonusPoint;	// 나의 마일리지는 증가
 	} // buy() end
+
+	// 물건 반품하기
+	public void refund(Product p) {
+		if(item.remove(p)) { // 구매상품 반품
+			System.out.println(p.toString()+" 반품되었습니다~");
+			this.myMoney=this.myMoney+p.price;			// 나의 재산은 증가
+			this.myMileage=this.myMileage-p.bonusPoint;	// 나의 마일리지는 감소
+		} else {
+			System.out.println("구매 내역에 상품이 없습니다!!");
+		} // if end
+	} // refund() end
 	
 	public void disp() {
+		if(item.isEmpty()) {
+			System.out.println("구매상품 없음!!");
+			return;
+		} // if end		
 		
 		// 문제) 구매 상품 목록과 구매한 상품의 총 합계금액을 구하시오
-
 		int sum=0;
 		StringBuilder shoplist = new StringBuilder();
 		for(int a=0; a<item.size(); a++) {
-			if(item.get(a)!=null) {
-				sum+=item.get(a).price;
-				shoplist.append(item.get(a).toString() + " ");
-			} // if end
+			Product p=item.get(a);
+			sum+=p.price;
+			shoplist.append(p.toString() + " ");
 		} // for end
 		
 		System.out.println("구매 상품 목록 : " + shoplist);

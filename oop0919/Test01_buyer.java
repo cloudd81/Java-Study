@@ -41,5 +41,16 @@ public class Test01_buyer {
 		lee.buy(phone);
 		lee.disp();
 		
+		System.out.println("<<<<<<<반품");
+		lee.refund(note);
+		
+		System.out.println("<<<<<<<결과");
+		lee.disp();
+		
+		System.out.println("----------------------------------");
+		
+		Order park = new Order();
+		park.disp();
+		
 	} // main() end
 } // class end
