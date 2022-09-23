@@ -39,6 +39,8 @@ public class Test07_NaverMovie {
 					} // for end
 				} // for end
 				
+				out.close();
+				fw.close();	
 				System.out.println("--------------gongjo.txt 공조 2 평점 저장 완성!");			
 				
 			} catch (Exception e) {

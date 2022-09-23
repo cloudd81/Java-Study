@@ -47,6 +47,8 @@ public class Test06_NaverMovie {
 					} // for end
 				} // for end
 				
+				out.close();
+				fw.close();				
 				System.out.println("soldesk.txt 파일 완성!");			
 				
 			} catch (Exception e) {
