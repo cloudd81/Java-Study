@@ -27,8 +27,10 @@ public class Test05_soldesk {
 					Document doc = Jsoup.connect(URL+params).get();
 
 					Elements elements = doc.select(".row_wrap .td_left");
+					elements.select(".td_m_date").remove();
+					
 					for( Element element : elements ) {
-						element.select(".td_m_date").remove();
+						System.out.println(element.text());
 						out.println(element.text());
 					} // for end
 				} // for end
