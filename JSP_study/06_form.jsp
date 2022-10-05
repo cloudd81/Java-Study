@@ -3,22 +3,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>06_form.jsp</title>
+	<meta charset="UTF-8">
+	<title>06_form.jsp</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h3>* 성적 입력 *</h3>
-	<form name="sungjukfrm" id="sungjukfrm" method="get" action="06_ok.jsp">
-		이름 : <input type="text" name="uname" id="uname" size="10" maxlength="20" placeholder="이름" required> 
-		<hr>
-		국어 : <input type="number" name="kor" id="kor" size="5" min="0" max="100">
-		<hr>
-		영어 : <input type="number" name="eng" id="eng" size="5" min="0" max="100">
-		<hr>
-		수학 : <input type="number" name="mat" id="mat" size="5" min="0" max="100">
-	  	<hr>
-	  	<input type="submit" value="전송">
-	  	<input type="reset"  value="취소">
+	<h3 style="text-align: center;">* 성적 입력 *</h3><br>
+	<form class="form-horizontal" name="sungjukfrm" id="sungjukfrm" method="post" action="06_ok.jsp">
+	<div class="form-group">
+		<label class="control-label col-sm-2">이름 :</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text" name="uname" id="uname" size="10" maxlength="20" placeholder="이름" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">국어 :</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="number" name="kor" id="kor" size="5" min="0" max="100">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">영어 :</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="number" name="eng" id="eng" size="5" min="0" max="100">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">수학 :</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="number" name="mat" id="mat" size="5" min="0" max="100">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+  			<button type="submit" class="btn btn-default">전송</button>
+  			<button type="reset"  class="btn btn-default">취소</button>
+  		</div>
+  	</div>
 	</form>
 	
 	<!--
@@ -35,9 +61,16 @@
 		 1) method = get 방식
 		  - 생략 시 기본값
 		  - 사용자가 입력 요청한 정보가 URL 그대로 노출
+		  - 한글 안깨짐
+		  - ok.jsp?서버로전송되는값들(공백금지)
+		  	형식) 요청페이지명(또는명령어)?변수=값&변수=값&변수=값&...
+		  	 예) 06_ok.jsp?uname=대한민국&kor=40&eng=50&mat=60
+		  - 검색어
 		  
 		 2) method = post 방식
 		  - 사용자가 요청한 정보가 URL에 노출되지 않고 패키지화하여 전송
+		  - 한글 꺠진다
+		  - 비번, 주민번호, 카드 번호 등
 	-->
 </body>
 </html>
