@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* layout.css */
+
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;    
+}
+p {font-size: 16px;}
+
+#title {font-family: 'Silkscreen', cursive;}
+.margin {margin-bottom: 45px;}
+
+.bg-1 { 
+    background-image: url('../images/miniproj/background_pac-man_white.jpg');
+    color: #555555;
+}
+.bg-2 { 
+    background-color: #EEF2E6;
+    color: #555555;
+}
+.bg-3 { 
+    background-color: #ffffff;
+    color: #555555;
+}
+.bg-4 { 
+    background-color: #3D8361;
+    color: #fff;
+}
+.container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+#game {
+    text-align: center;
+    position: relative;
+    margin: auto;
+    top: 20px;
+    width: 520px;
+    height: 100px;
+    background-color: none;
+    overflow: hidden;
+}
+
+.hg {
+	text-align: center;
+	font-family: HBIOS-SYS, monospace;
+	font-weight: normal;
+}
+
+.context {margin: auto; text-align: center; font-family: 'RIDIBatang', 'normal'; font-size:15px;}
