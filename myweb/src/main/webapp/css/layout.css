@@ -1,31 +1,55 @@
 @charset "UTF-8";
 /* layout.css */
 
-body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;    
+@font-face {
+    font-family: 'ChosunCentennial';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+	font-family: 'Pretendard-Regular', 'normal';
+    font-size: 20px;
+    line-height: 1.8;
+    color: #222222;    
+}
+
 p {font-size: 16px;}
 
-#title {font-family: 'Silkscreen', cursive;}
-.margin {margin-bottom: 45px;}
+#title {font-family: 'ChosunCentennial', 'normal';}
 
-.bg-1 { 
-    background-image: url('../images/miniproj/background_pac-man_white.jpg');
-    color: #555555;
+.margin {margin-bottom: 20px;}
+
+.carousel-inner img { 
+  width: 100%; /* Set width to 100% */
+  margin: auto;
 }
-.bg-2 { 
-    background-color: #EEF2E6;
-    color: #555555;
+.carousel-caption h3{
+  color: #fff !important;
 }
-.bg-3 { 
-    background-color: #ffffff;
-    color: #555555;
+.shadow {
+  text-shadow: 4px 4px 5px #000000;
 }
-.bg-4 { 
-    background-color: #3D8361;
-    color: #fff;
+
+@media (max-width: 600px) {
+	.carousel-caption {
+    	display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+	}
 }
 .container-fluid {
     padding-top: 30px;
@@ -33,15 +57,29 @@ p {font-size: 16px;}
 }
 .navbar {
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 5px;
+}
+.navbar-nav {
+	margin-left: 20px;
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
+}
+#indexbg {
+    background-color: #ffffcc;
+    color: #222222;
+}
+#myNavbar {
+	margin-top : 10px;
+	}
+
+#clock {
+	color : #000000;
 }
 
 #game {
@@ -54,11 +92,14 @@ p {font-size: 16px;}
     background-color: none;
     overflow: hidden;
 }
-
-.hg {
+.font1 {
 	text-align: center;
-	font-family: HBIOS-SYS, monospace;
+	font-family: 'ChosunCentennial', 'normal';
 	font-weight: normal;
+}
+.font2 {
+	text-align: center;
+	font-family: 'Pretendard-Regular', 'normal';
 }
 
 .context {margin: auto; text-align: center; font-family: 'RIDIBatang', 'normal'; font-size:15px;}

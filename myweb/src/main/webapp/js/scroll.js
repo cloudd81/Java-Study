@@ -1,9 +1,9 @@
 let photos = [];
-photos[0] = '<img src="./images/miniproj/ghost1.gif" width = "60">';
-photos[1] = '<img src="./images/miniproj/ghost2.gif" width = "60">';
-photos[2] = '<img src="./images/miniproj/ghost3.gif" width = "60">';
-photos[3] = '';
-photos[4] = '<img src="./images/miniproj/pac-man.gif" width = "60">';
+photos[0] = '<img src="./images/myweb/walk4.gif" width = "60">';
+photos[1] = '<img src="./images/myweb/walk2.gif" width = "70">';
+photos[2] = '<img src="./images/myweb/walk3.gif" width = "130">';
+photos[3] = '<img src="./images/myweb/walk1.gif" width = "120" margin-left="20px" padding-top="10px">';
+photos[4] = '<img src="./images/myweb/walk5.gif" width = "160" margin-bottom="30px">';
 
 function start(){
     // alert(photos[0]);

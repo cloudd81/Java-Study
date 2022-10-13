@@ -6,6 +6,7 @@
 <%@ page import="java.io.*"%>
 <%@ page import="java.util.*"%>
 <%@ page import="net.bbs.*" %>
+<%@ page import="net.utility.*" %>
 
 <jsp:useBean id="dao" class="net.bbs.BbsDAO" scope="page"/>
 <jsp:useBean id="dto" class="net.bbs.BbsDTO" scope="page"/>
