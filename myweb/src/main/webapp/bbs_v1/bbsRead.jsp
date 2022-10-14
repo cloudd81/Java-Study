@@ -17,11 +17,11 @@
 %>
 		<tr>
 			<th>글 제목</th>			
-			<td class="font2"><%=dto.getSubject()%></td>
+			<td><%=dto.getSubject()%></td>
 		</tr>
 		<tr>
 			<th>글 내용</th>			
-			<td class="font2" style="text-align: left; padding-left: 20px">
+			<td style="text-align: left;">
 <%
 			// 특수문자로 치환하기
 			// 사용자가 입력한 엔터(\n)를 <br>태그로 바꾸기
@@ -32,21 +32,20 @@
 		</tr>
 		<tr>
 			<th>조회수</th>			
-			<td class="font2"><%=dto.getReadcnt()%></td>
+			<td><%=dto.getReadcnt()%></td>
 		</tr>
 		<tr>
 			<th>작성일</th>	
-			<td class="font2"><%=dto.getRegdt()%></td>
+			<td><%=dto.getRegdt()%></td>
 		</tr>
 		<tr>
 			<th>ip 주소</th>			
-			<td class="font2"><%=dto.getIp()%></td>
+			<td><%=dto.getIp()%></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<a class="btn btn-default" href="bbsList.jsp?col=<%=col%>&word=<%=word%>">돌아가기</a>
 				<a class="btn btn-default" href="bbsReply.jsp?bbsno=<%=dto.getBbsno()%>">답변 쓰기</a>
-				<a class="btn btn-default" href="bbsUpdate.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>">수정</a>
+				<a class="btn btn-default" href="bbsUpdate.jsp?bbsno=<%=dto.getBbsno()%>">수정</a>
 				<a class="btn btn-default" href="bbsDel.jsp?bbsno=<%=dto.getBbsno()%>">삭제</a>
 			</td>
 		</tr>

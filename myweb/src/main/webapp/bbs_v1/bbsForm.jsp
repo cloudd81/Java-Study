@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../ssi.jsp" %>
 <%@ include file="../header_bbs.jsp" %>
- <!-- 본문 시작 bbsReply.jsp -->
-	<span class="font2"> 답변 쓰기 </span>
-
-	<form name="bbsfrm" id="bbsfrm" method="post" action="bbsReplyProc.jsp" onsubmit="return bbsCheck()">
-		<!-- 부모글번호 -->
-		<input type="hidden" name="bbsno" value="<%=request.getParameter("bbsno")%>">
-			<table class="table table-responsive">
+ <!-- 본문 시작 -->
+	<div class="container">
+	<h2 class="font2"> 글쓰기 </h2>
+	
+		<form name="bbsfrm" id="bbsfrm" method="post" action="bbsIns.jsp" onsubmit="return bbsCheck()"> <!-- myscript.js 파일을 통해 서버로 넘어가기 전에 유효한 접근인지 검사 -->
+		<table class="table table-striped">
 		<tr>
 		   <th class="font2">작성자</th>
 		   <td><input type="text" name="wname" id="wname" class="form-control font2" maxlength="20" required></td>
@@ -27,14 +25,13 @@
 		</tr>
 		<tr>
 		    <td colspan="2" align="center">
-		       <input type="submit" value="답글 쓰기" class="btn btn-success btn-block hg">
-		       <input type="reset"  value="취소" class="btn btn-danger btn-block hg">
+		       <input type="submit" value="쓰기" class="btn btn-success btn-block font2">
+		       <input type="reset"  value="취소" class="btn btn-danger btn-block font2">
 		    </td>
 		</table>	
 		</form>
 		
-	<p style="text-align: right;"><a class="btn btn-default font2" href="bbsList.jsp">목록</a></p>
-
-		
+	<p style="text-align: right;"><a class="btn btn-default hg" href="bbsList.jsp">목록</a></p>
+	</div>
  <!-- 본문 끝 -->
 <%@ include file="../footer.jsp" %>

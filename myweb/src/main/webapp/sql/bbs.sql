@@ -107,3 +107,108 @@ WHERE bbsno=?
 - 수정하고 재조정하기
 UPDATE tb_bbs SET ansnum=ansnum+1
 WHERE grpno=2 and ansnum>=6
+//////////////////////////////////////////////////////////////////////////
+
+
+[검색]
+-- 제목+내용에서 '파스타'가 있는지 검색
+WHERE subject LIKE %파스타% OR content LIKE %파스타% 
+
+-- 제목에서 '파스타'가 있는지 검색
+WHERE subject LIKE %파스타%
+
+-- 내용에서 '파스타'가 있는지 검색
+WHERE content LIKE %파스타% 
+
+-- 작성자에서 '파스타'가 있는지 검색
+WHERE wname LIKE %파스타%
+
+
+[과제]
+답변이 없는 부모글은 넘어가고
+
+ 무궁화
+ 
+ 코리아	2 > 목록 페이지에 답글의 갯수를 표기하기;
+ 
+SELECT tb_bbs.grpno as grpno, AA.cnt as indent
+FROM ( 
+    SELECT grpno, count(indent)-1 as cnt
+    FROM tb_bbs
+    GROUP BY grpno
+    ) AA inner join tb_bbs
+ON AA.grpno=tb_bbs.grpno
+WHERE tb_bbs.indent=0;
+
+WHERE grpno=1 AND indent>0;
+
+부모글의 grpno와 indent를 받아온다
+/////////////////////////////////////
+
+
+set pagesize 100;
+set linesize 100;
+col wname for a10;
+col subject for a20;
+
+select bbsno, wname, subject, readcnt, indent, regdt
+from tb_bbs
+
+
+[페이징]
+- rownum 줄 번호 활용
+1);
+select bbsno, wname, subject, readcnt, indent, regdt
+from tb_bbs
+where subject like '%2%'
+ORDER BY grpno DESC, ansnum;
+
+2) rownum 추가
+select bbsno, wname, subject, readcnt, indent, regdt, rownum
+from tb_bbs
+ORDER BY grpno DESC, ansnum;
+
+3) 
+SELECT bbsno, wname, subject, readcnt, indent, regdt, rownum as rnum
+FROM (
+    SELECT bbsno, wname, subject, readcnt, indent, regdt
+    FROM tb_bbs
+    ORDER BY grpno DESC, ansnum
+    );
+    
+
+4) 줄번호 1-5행 조회하기(1페이지)
+SELECT bbsno, wname, subject, readcnt, indent, regdt, rownum
+FROM (
+    SELECT bbsno, wname, subject, readcnt, indent, regdt
+    FROM tb_bbs
+    WHERE subject like '%6%'
+    ORDER BY grpno DESC, ansnum
+    )
+WHERE rownum>=1 AND rownum<=5;
+
+5) 줄번호 6-10행 조회하기(2페이지)
+SELECT *
+FROM (
+    SELECT bbsno, wname, subject, readcnt, indent, regdt, rownum as r
+    FROM (
+        SELECT bbsno, wname, subject, readcnt, indent, regdt
+        FROM tb_bbs
+        ORDER BY grpno DESC, ansnum
+        )
+    )
+WHERE r>=6 AND r<=10;
+
+
+6) 페이징 + 검색
+SELECT *
+FROM (
+    SELECT bbsno, wname, subject, readcnt, indent, regdt, rownum as r
+    FROM (
+        SELECT bbsno, wname, subject, readcnt, indent, regdt
+        FROM tb_bbs
+        WHERE subject LIKE '%2%'
+        ORDER BY grpno DESC, ansnum
+        )
+    )
+WHERE r>=6 AND r<=10;

@@ -28,7 +28,7 @@
 	} else{
 		out.print("<script>");
 		out.print("		alert('게시글이 수정되었습니다');");
-		out.print(" 	location.href='bbsList.jsp?col=" + col + "&word=" + word + "';");
+		out.print(" 	location.href='bbsList.jsp';");
 		out.print("</script>");
 	} // if end	
 	

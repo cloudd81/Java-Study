@@ -1,3 +1,4 @@
+<%@page import="net.utility.Utility"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../ssi.jsp" %>
@@ -15,10 +16,7 @@
 	</tr>
 	
 <%
-	// 한 페이지당 출력할 행의 개수
-	int recordPerPage = 10;	
-
-	ArrayList<BbsDTO> list=dao.list3(col, word, nowPage, recordPerPage);
+	ArrayList<BbsDTO> list=dao.list2(col, word);
 	if(list==null){
 		out.print("<tr>");
 		out.print("	<td class='font2' colspan='5'>글없음!!</td>");

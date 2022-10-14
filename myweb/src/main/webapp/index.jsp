@@ -25,7 +25,7 @@
  
 <!-- 메인 카테고리 시작 -->
 <nav id="indexbg" class="navbar navbar-default">
-<div class="container-fluid text-center">
+<div id="topbg" class="container-fluid text-center" style="background-image: url('./images/miniproj/topbg.png');">
   	<a href="<%=request.getContextPath()%>/index.jsp">
   		<img class="img-responsive" alt="ozlogo" src="./images/miniproj/logo.png" width="180px;" style="display:inline;">
   	</a>
@@ -39,11 +39,13 @@
     </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav">
         <li><a class="font2" href="./bbs/bbsList.jsp">게시판</a></li>
         <li><a class="font2" href="./notice/noticeList.jsp">공지사항</a></li>
         <li><a class="font2" href="./pds/pdsList.jsp">포토갤러리</a></li>
         <li><a class="font2" href="./mail/mailForm.jsp">메일보내기</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
         <li><a class="font2" href="./member/loginForm.jsp"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
     </ul>
     </div>
@@ -53,8 +55,8 @@
 <!-- First Container Start -->
 <div class="Container">
 	<div class="row">
-	<div class="col-md-8">
-		<div id="myCarousel" class="carousel slide margin" data-ride="carousel">
+	<div class="col-sm-8">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: 50px;">
 		    <!-- Indicators -->
 		    <ol class="carousel-indicators">
 		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -91,15 +93,13 @@
 		    </a>
 		</div><!-- myCarousel End -->
 	</div>
-	<div class="col-md-4 text-center">
+	<div class="col-sm-4 hidden-xs text-center">
 		<br>
 	    <p class="font2" style="color: black;">회원정보</p>
         <br>
         <div id="clock">
         	<script> showtime();</script>
         </div>
-        <button type="button" id="title" class="btn btn-default" onclick="showtime()">clock start</button>
-        <button type="button" id="title" class="btn btn-default" onclick="killtime()">clock stop</button>
 	</div>
 	</div><!-- row end -->
 </div><!-- First Container End -->
@@ -108,10 +108,28 @@
 <div class="container-fluid text-center">
     <div class="row">
         <!-- 본문 시작 -->
-            <br>
-            <div id="game">
-                <script> start(); </script>
-            </div>
+        <div class="col-sm-12">
+			<span class="col-xs-6 col-sm-3">
+				<img alt="dorosi" src="./images/miniproj/dorosi.png">
+				<br>
+				<button class="btn btn-default margin2 font1" data-toggle="tooltip" data-placement="top" title="hey!">도로시</button>
+			</span>
+			<span class="col-xs-6 col-sm-3">
+				<img alt="tinman" src="./images/miniproj/tinman.png">
+				<br>
+				<button class="btn btn-default margin2 font1" data-toggle="tooltip" data-placement="top" title="hey!">양철 나무꾼</button>
+			</span>
+			<span class="col-xs-6 col-sm-3">
+				<img alt="scarecrow" src="./images/miniproj/scarecrow.png">
+				<br>
+				<button class="btn btn-default margin2 font1" data-toggle="tooltip" data-placement="top" title="hey!">허수아비</button>
+			</span>
+			<span class="col-xs-6 col-sm-3">
+				<img alt="rian" src="./images/miniproj/rian.png">
+				<br>
+				<button class="btn btn-default margin2 font1" data-toggle="tooltip" data-placement="top" title="hey!">겁쟁이 사자</button>
+			</span>
+        </div>
         <!-- 본문 끝 -->
     </div> <!-- row 끝 -->
 </div> <!-- Second Container 끝 -->

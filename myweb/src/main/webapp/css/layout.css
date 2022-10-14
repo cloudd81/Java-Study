@@ -28,12 +28,31 @@ body {
     line-height: 1.8;
     color: #222222;    
 }
+a {
+  text-decoration-line: none !important;
+  color : black;
+}
+
+a:link {
+  color : black;
+}
+a:visited {
+  color : black;
+}
+a:hover {
+  color : black;
+}
+a:active {
+  color : black;
+}
 
 p {font-size: 16px;}
 
 #title {font-family: 'ChosunCentennial', 'normal';}
 
 .margin {margin-bottom: 20px;}
+
+.margin2 {margin-top: 10px; margin-bottom: 10px;}
 
 .carousel-inner img { 
   width: 100%; /* Set width to 100% */
@@ -46,7 +65,7 @@ p {font-size: 16px;}
   text-shadow: 4px 4px 5px #000000;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	.carousel-caption {
     	display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
 	}
@@ -57,7 +76,7 @@ p {font-size: 16px;}
 }
 .navbar {
     padding-top: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
@@ -74,23 +93,19 @@ p {font-size: 16px;}
     background-color: #ffffcc;
     color: #222222;
 }
+#topbg {
+	height: 120px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 40%;
+}
 #myNavbar {
 	margin-top : 10px;
 	}
 
 #clock {
 	color : #000000;
-}
-
-#game {
-    text-align: center;
-    position: relative;
-    margin: auto;
-    top: 20px;
-    width: 520px;
-    height: 100px;
-    background-color: none;
-    overflow: hidden;
 }
 .font1 {
 	text-align: center;

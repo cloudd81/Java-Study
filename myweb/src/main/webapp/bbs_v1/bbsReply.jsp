@@ -4,6 +4,7 @@
 <%@ include file="../header_bbs.jsp" %>
  <!-- 본문 시작 bbsReply.jsp -->
 	<span class="font2"> 답변 쓰기 </span>
+	<p style="text-align: right;"><a class="btn btn-default hg" href="bbsList.jsp">목록</a></p>
 
 	<form name="bbsfrm" id="bbsfrm" method="post" action="bbsReplyProc.jsp" onsubmit="return bbsCheck()">
 		<!-- 부모글번호 -->
@@ -33,7 +34,7 @@
 		</table>	
 		</form>
 		
-	<p style="text-align: right;"><a class="btn btn-default font2" href="bbsList.jsp">목록</a></p>
+	<p style="text-align: right;"><a class="btn btn-default hg" href="bbsList.jsp">목록</a></p>
 
 		
  <!-- 본문 끝 -->

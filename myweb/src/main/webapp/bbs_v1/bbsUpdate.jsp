@@ -16,8 +16,6 @@
 %>	
 		<form name="bbsfrm" id="bbsfrm" method="post" action="bbsUpdateProc.jsp" onsubmit="return updateCheck()">
 			<input type="hidden" name="bbsno" value="<%=dto.getBbsno()%>">
-			<input type="hidden" name="col" value="<%=col%>">
-			<input type="hidden" name="word" value="<%=word%>">
 			<table class="table table-responsive">
 		<tr>
 		   <th class="font2">작성자</th>
