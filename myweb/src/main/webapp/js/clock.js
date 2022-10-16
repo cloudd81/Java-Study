@@ -28,13 +28,13 @@ function showtime() {
     }
     //시간
     if ((d.getHours())>12) {
-        today += "PM " +
+        today += "<br>PM " +
         
         (d.getHours() - 12) + ":";
     } else if ((d.getHours())==12) {
-        today += "PM " + (d.getHours()) + ":";
+        today += "<br>PM " + (d.getHours()) + ":";
     } else {
-        today += "AM " + (d.getHours()) + ":";
+        today += "<br>AM " + (d.getHours()) + ":";
     }
 
     //분

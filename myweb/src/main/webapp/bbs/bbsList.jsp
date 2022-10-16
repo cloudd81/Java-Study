@@ -3,15 +3,14 @@
 <%@ include file="../ssi.jsp" %>
 <%@ include file="../header_bbs.jsp" %>
  <!-- 본문 시작 -->
-	<div class="container">
 	<h3 class="font2"> 게시판 </h3>
 
 	<table class="table table-condensed context">
 	<tr>
 		<th class="col-xs-6" style="text-align: center;">제목</th>
 		<th class="col-xs-3" style="text-align: center;">이름</th>
-		<th class="col-xs-1" style="text-align: center;">조회수</th>
-		<th class="col-xs-2" style="text-align: center;">작성일</th>
+		<th class="col-xs-1" style="text-align: center;">작성일</th>
+		<th class="col-xs-2" style="text-align: center;">조회수</th>
 	</tr>
 	
 <%
@@ -33,15 +32,14 @@
 						
 %>
 			<tr>
-				<td class="col-xs-6"><a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>">
+				<td class="col-xs-6 font3" style="padding-left: 20px;">
 <%
 			//답변 이미지 출력
 			for(int n=1; n<=dto.getIndent(); n++){
 				out.println("<img src='../images/reply.gif'>");
 			}
-%>			
-				</a>
-				<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>"><%=dto.getSubject()%></a>
+%>
+				<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>"><%=dto.getSubject()%></a>
 <%			
 
 
@@ -60,8 +58,8 @@
 %>			
 				</td>
 				<td class="col-xs-3"><%=dto.getWname()%></td>
-				<td class="col-xs-1"><%=dto.getReadcnt()%></td>
 				<td class="col-xs-2"><%=dto.getRegdt().substring(0,10)%></td>
+				<td class="col-xs-2"><%=dto.getReadcnt()%></td>
 			</tr>
 <%
 		} // for end
@@ -69,11 +67,18 @@
 		// 글 갯수
 		int totalRecord = dao.count2(col, word);
 		out.println("<tr>");
-		out.println("	<td colspan='4' style='text-align:center;'>");
+		out.println("	<td colspan='4' style='text-align:right;'>");
 		out.println("		글 갯수 : <strong>" + totalRecord + "</strong>");
 		out.println("	<td>");
 		out.println("</tr>");
-
+		
+		// 페이지 리스트
+		out.println("<tr>");
+		out.println("	<td colspan='4' style='text-align: center; height: 20px;'>");
+		String paging = new Paging().paging4(totalRecord, nowPage, recordPerPage, col, word, "bbsList.jsp");
+		out.print(paging);
+		out.println("	</td>");
+		out.println("</tr>");
 %>
 		<!-- 검색 시작 -->
 		<tr>
@@ -97,6 +102,5 @@
 			
 	</table>
 	<p style="text-align: right;"><a class="btn btn-default font2" href="bbsForm.jsp">글쓰기</a></p>
-	</div>
  <!-- 본문 끝 -->
 <%@ include file="../footer.jsp" %>

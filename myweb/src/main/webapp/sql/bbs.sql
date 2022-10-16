@@ -130,17 +130,22 @@ WHERE wname LIKE %파스타%
  무궁화
  
  코리아	2 > 목록 페이지에 답글의 갯수를 표기하기;
+
+SELECT grpno, count(indent)-1 as cnt
+FROM tb_bbs
+GROUP BY grpno;
+
+
  
-SELECT tb_bbs.grpno as grpno, AA.cnt as indent
+SELECT BB.subject, AA.reply
 FROM ( 
-    SELECT grpno, count(indent)-1 as cnt
+    SELECT grpno, count(indent)-1 as reply
     FROM tb_bbs
     GROUP BY grpno
-    ) AA inner join tb_bbs
-ON AA.grpno=tb_bbs.grpno
-WHERE tb_bbs.indent=0;
-
-WHERE grpno=1 AND indent>0;
+    ) AA inner join tb_bbs BB
+ON AA.grpno=BB.grpno
+WHERE BB.indent=0;
+ORDER BY BB.grpno DESC;
 
 부모글의 grpno와 indent를 받아온다
 /////////////////////////////////////

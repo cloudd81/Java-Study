@@ -1,3 +1,4 @@
+<%@page import="java.time.Clock"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
 <nav id="indexbg" class="navbar navbar-default">
 <div id="topbg" class="container-fluid text-center" style="background-image: url('./images/miniproj/topbg.png');">
   	<a href="<%=request.getContextPath()%>/index.jsp">
-  		<img class="img-responsive" alt="ozlogo" src="./images/miniproj/logo.png" width="180px;" style="display:inline;">
+  		<img class="img-responsive" alt="ozlogo" src="./images/miniproj/logo.png" width="200px;" style="display:inline;">
   	</a>
 </div>
 <div class="container">
@@ -53,31 +54,40 @@
 </nav> <!-- 메인 카테고리 끝 -->
 
 <!-- First Container Start -->
-<div class="Container">
+<div class="Container bgbox">
 	<div class="row">
-	<div class="col-sm-8">
+	<div class="col-sm-9 col-lg-8">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: 50px;">
 		    <!-- Indicators -->
 		    <ol class="carousel-indicators">
 		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		      <li data-target="#myCarousel" data-slide-to="1"></li>
+		      <li data-target="#myCarousel" data-slide-to="2"></li>
 		    </ol>
 		
 		    <!-- Wrapper for slides -->
 		    <div class="carousel-inner" role="listbox">
 		      <div class="item active text-center">
-		        <img src="./images/miniproj/banner1.png" alt="banner1" width="1200" height="700">
+		        <img src="./images/miniproj/bn1.png" alt="banner1" width="600" height="350">
 		        <div class="carousel-caption">
-		          <h3 class="font1 shadow">도로시와 친구들!</h3>
-		          <p class="font1 shadow">우리 제법 잘 어울려요</p>
+		          <h3 class="font1 textbox">마녀를 잡으러 가자고?</h3>
+		          <h4 class="font1 textbox">우리 넷이서 괜찮을까?</h4>
 		        </div>      
 		      </div>
 		
 		      <div class="item">
-		        <img src="./images/miniproj/banner2.png" alt="banner2" width="1200" height="700">
+		        <img src="./images/miniproj/bn3.png" alt="banner2" width="600" height="350">
 		        <div class="carousel-caption">
-		          <h3 class="font1 shadow">마녀를 향해!</h3>
-		          <p class="font1 shadow">마녀를 물리치면 소원을 이루어준다고 했어요</p>
+		          <h3 class="font1 textbox">넷이서 간다고?</h3>
+		          <h4 class="font1 textbox">미치지 않고서야 에메랄드성으로 넷이서? 참나?</h4>
+		        </div>      
+		      </div>
+		      
+		      <div class="item">
+		        <img src="./images/miniproj/bn2.png" alt="banner3" width="600" height="350">
+		        <div class="carousel-caption">
+		          <h3 class="font1 textbox">새로운 친구가 필요해!</h3>
+		          <h4 class="font1 textbox">누가 우리와 함께 해줄까?</h4>
 		        </div>      
 		      </div>
 		    </div>
@@ -93,13 +103,15 @@
 		    </a>
 		</div><!-- myCarousel End -->
 	</div>
-	<div class="col-sm-4 hidden-xs text-center">
-		<br>
-	    <p class="font2" style="color: black;">회원정보</p>
-        <br>
-        <div id="clock">
-        	<script> showtime();</script>
-        </div>
+	<div class="col-sm-3 col-lg-4 hidden-xs">
+		<table class="table text-center">
+			<tr class="font2">
+	    		회원정보
+	    	</tr>
+	    	<tr class="text-center font2" id="clock">
+		        <script type="text/javascript">showtime()</script>
+	    	</tr>
+        </table>
 	</div>
 	</div><!-- row end -->
 </div><!-- First Container End -->

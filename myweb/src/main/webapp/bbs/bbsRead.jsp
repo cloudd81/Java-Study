@@ -44,7 +44,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<a class="btn btn-default" href="bbsList.jsp?col=<%=col%>&word=<%=word%>">돌아가기</a>
+				<a class="btn btn-default" href="bbsList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">돌아가기</a>
 				<a class="btn btn-default" href="bbsReply.jsp?bbsno=<%=dto.getBbsno()%>">답변 쓰기</a>
 				<a class="btn btn-default" href="bbsUpdate.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>">수정</a>
 				<a class="btn btn-default" href="bbsDel.jsp?bbsno=<%=dto.getBbsno()%>">삭제</a>
