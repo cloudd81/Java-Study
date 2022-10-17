@@ -111,6 +111,8 @@ p {font-size: 16px;}
 #clock {
 	color : #000000;
 }
+
+/* 폰트 */
 .font1 {
 	text-align: center;
 	font-family: 'ChosunCentennial', 'normal';
@@ -125,6 +127,8 @@ p {font-size: 16px;}
 	font-family: 'Pretendard-Regular', 'normal';
 }
 .context {margin: auto; text-align: center; font-family: 'RIDIBatang', 'normal'; font-size:15px;}
+
+/* 페이지 번호 */
 #paging {
 	height: 40px;
 }

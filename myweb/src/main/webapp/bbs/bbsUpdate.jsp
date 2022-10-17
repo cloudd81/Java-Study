@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../ssi.jsp" %>
+<%@ include file="ssi.jsp" %>
 <%@ include file="../header_bbs.jsp" %>
  <!-- 본문 시작 bbsUpdateForm.jsp -->
 	<h3 class="font2"> 게시글 수정 </h3>

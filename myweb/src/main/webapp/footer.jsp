@@ -7,8 +7,8 @@
 <!-- Content 끝 -->
 
 <!-- Footer 시작 -->
-<footer id="indexbg" class="container-fluid text-center">
-	<p>Copyright &copy; 김경환 cloudd81</p> 
+<footer id="indexbg" class="container-fluid text-center"  style="background-image: url('../images/miniproj/paperbg2.jpg')">
+	<p style="color: #222222; text-shadow: 2px 2px 3px gray;">Copyright &copy; 김경환 cloudd81</p> 
 </footer>
 <!-- Footer 끝 -->    
 

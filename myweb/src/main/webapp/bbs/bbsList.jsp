@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../ssi.jsp" %>
+<%@ include file="ssi.jsp" %>
 <%@ include file="../header_bbs.jsp" %>
  <!-- 본문 시작 -->
 	<h3 class="font2"> 게시판 </h3>
-
+	<div class="col-lg-2 hidden-ms"></div>
+	<div class="col-lg-8">
 	<table class="table table-condensed context">
 	<tr>
 		<th class="col-xs-6" style="text-align: center;">제목</th>
@@ -102,5 +103,7 @@
 			
 	</table>
 	<p style="text-align: right;"><a class="btn btn-default font2" href="bbsForm.jsp">글쓰기</a></p>
+	</div>
+	<div class="col-lg-2 hidden-ms"></div>
  <!-- 본문 끝 -->
 <%@ include file="../footer.jsp" %>

@@ -54,6 +54,8 @@
 </nav> <!-- 메인 카테고리 끝 -->
 
 <!-- First Container Start -->
+<div class="col-lg-1 hidden-ms"></div>
+<div class="col-lg-10">
 <div class="Container bgbox">
 	<div class="row">
 	<div class="col-sm-9 col-lg-8">
@@ -79,7 +81,7 @@
 		        <img src="./images/miniproj/bn3.png" alt="banner2" width="600" height="350">
 		        <div class="carousel-caption">
 		          <h3 class="font1 textbox">넷이서 간다고?</h3>
-		          <h4 class="font1 textbox">미치지 않고서야 에메랄드성으로 넷이서? 참나?</h4>
+		          <h4 class="font1 textbox">에메랄드성을 넷이서? 미치지 않고서야?</h4>
 		        </div>      
 		      </div>
 		      
@@ -103,17 +105,23 @@
 		    </a>
 		</div><!-- myCarousel End -->
 	</div>
-	<div class="col-sm-3 col-lg-4 hidden-xs">
-		<table class="table text-center">
-			<tr class="font2">
-	    		회원정보
+	<div class="container-fluid col-sm-3 col-lg-4 hidden-xs">
+		<table class="table table-striped">
+			<tr>
+				<td class="font2" style="text-align: center;">
+	    			회원정보
+	    		</td>
 	    	</tr>
 	    	<tr class="text-center font2" id="clock">
-		        <script type="text/javascript">showtime()</script>
+	    		<td>
+		        	<script type="text/javascript">showtime()</script>
+		        </td>
 	    	</tr>
         </table>
 	</div>
 	</div><!-- row end -->
+</div>
+<div class="col-lg-1 hidden-ms"></div>
 </div><!-- First Container End -->
 
 <!-- Content 시작 -->
@@ -148,8 +156,8 @@
 <!-- Content 끝 -->
 
 <!-- Footer 시작 -->
-<footer id="indexbg" class="container-fluid text-center">
-	<p>Copyright &copy; 김경환 cloudd81</p> 
+<footer id="indexbg" class="container-fluid text-center" style="background-image: url('./images/miniproj/paperbg2.jpg')">
+	<p style="color: #222222; text-shadow: 2px 2px 3px gray; opacity: 0.8;">Copyright &copy; 김경환 cloudd81</p> 
 </footer>
 <!-- Footer 끝 -->    
 
