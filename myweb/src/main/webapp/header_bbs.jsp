@@ -22,7 +22,7 @@
 <body>
  
 <!-- 메인 카테고리 시작 -->
-<nav id="indexbg" class="navbar navbar-default">
+<nav id="indexbg" class="navbar navbar-default" style="background-color: #21201d;">
 <div class="container">
     <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

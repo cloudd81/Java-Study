@@ -54,3 +54,7 @@ where id='itwill' and passwd='12341234' and mlevel IN ('A1', 'B1', 'C1', 'D1');
 select mlevel
 from friends
 where id='user1' and passwd='12341234' and mlevel IN ('A1', 'B1', 'C1', 'D1');
+
+SELECT count(id)
+FROM friends
+WHERE mlevel IN ('A1', 'B1', 'C1', 'D1') AND id = 'itwill';

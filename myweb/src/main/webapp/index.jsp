@@ -25,7 +25,7 @@
 <body>
  
 <!-- 메인 카테고리 시작 -->
-<nav id="indexbg" class="navbar navbar-default">
+<nav id="indexbg" class="navbar navbar-default" style="background-color: #21201d;">
 <div id="topbg" class="container-fluid text-center" style="background-image: url('./images/miniproj/topbg.png');">
   	<a href="<%=request.getContextPath()%>/index.jsp">
   		<img class="img-responsive" alt="ozlogo" src="./images/miniproj/logo.png" width="200px;" style="display:inline;">
@@ -39,8 +39,8 @@
         <span class="icon-bar"></span>
     </button>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-    <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav" id="myNavbar">
         <li><a class="font2" href="./bbs/bbsList.jsp">게시판</a></li>
         <li><a class="font2" href="./notice/noticeList.jsp">공지사항</a></li>
         <li><a class="font2" href="./pds/pdsList.jsp">포토갤러리</a></li>
@@ -156,8 +156,8 @@
 <!-- Content 끝 -->
 
 <!-- Footer 시작 -->
-<footer id="indexbg" class="container-fluid text-center" style="background-image: url('./images/miniproj/paperbg2.jpg')">
-	<p style="color: #222222; text-shadow: 2px 2px 3px gray; opacity: 0.8;">Copyright &copy; 김경환 cloudd81</p> 
+<footer id="indexbg" class="container-fluid text-center"  style="background-color: #21201d;">
+	<p style="color: white; text-shadow: 2px 2px 3px gray;">Copyright &copy; 김경환 cloudd81</p> 
 </footer>
 <!-- Footer 끝 -->    
 

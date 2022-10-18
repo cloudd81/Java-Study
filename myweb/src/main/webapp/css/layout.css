@@ -90,6 +90,9 @@ p {font-size: 16px;}
 .navbar-nav {
 	margin-left: 20px;
 }
+.navbar-nav  li a {
+    color: white !important;
+}
 .navbar-nav  li a:hover {
     color: #A1C298 !important;
 }
@@ -106,8 +109,7 @@ p {font-size: 16px;}
 }
 #myNavbar {
 	margin-top : 2px;
-	}
-
+}
 #clock {
 	color : #000000;
 }

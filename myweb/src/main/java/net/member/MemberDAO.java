@@ -47,6 +47,59 @@ public class MemberDAO {
 		} // end
 		return mlevel;
 	} // end
+	
+	public int duplecateID(String id) {
+		int cnt = 0;
+		try {
+			con = dbopen.getConnection();
+			
+			sql = new StringBuilder();
+			sql.append(" SELECT count(id) as cnt ");
+			sql.append(" FROM friends ");
+			sql.append(" WHERE id = ? ");
+			sql.append(" AND mlevel IN ('A1', 'B1', 'C1', 'D1') "); // 탈퇴한 회원의 아이디는 만들 수 있도록
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, id);
+			
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				cnt = rs.getInt("cnt");
+			} // if end
+			
+		} catch (Exception e) {
+			System.out.println("아이디 중복확인 실패 : " + e);
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		} // end
+		return cnt;
+	} // duplecateID() end
+	
+	public int duplecateEmail(String email) {
+		int cnt = 0;
+		try {
+			con = dbopen.getConnection();
+			
+			sql = new StringBuilder();
+			sql.append(" SELECT count(email) as cnt ");
+			sql.append(" FROM friends ");
+			sql.append(" WHERE email = ? ");
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, email);
+			
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				cnt = rs.getInt("cnt");
+			} // if end
+			
+		} catch (Exception e) {
+			System.out.println("이메일 중복확인 실패 : " + e);
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		} // end
+		return cnt;
+	} // duplecateID() end
 
 	
 }
