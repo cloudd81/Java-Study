@@ -20,13 +20,15 @@ CREATE TABLE friends (
     address1 VARCHAR(255) NULL,     -- 주소 1
     address2 VARCHAR(255) NULL,     -- 주소 2(나머지주소)
     job      VARCHAR(20)  NOT NULL, -- 직업
-   	hope     VARCHAR(50)  NOT NULL,	-- 소원
+   	hope     VARCHAR(255) NOT NULL,	-- 소원
     mlevel   CHAR(2)      NOT NULL, -- 회원 등급, A1, B1, C1, D1, E1, F1
     mdate    DATE         NOT NULL, -- 가입일    
     PRIMARY KEY (id)
 );
 
 commit;
+
+select email from friends;
 
 select * from friends;
 
@@ -58,3 +60,10 @@ where id='user1' and passwd='12341234' and mlevel IN ('A1', 'B1', 'C1', 'D1');
 SELECT count(id)
 FROM friends
 WHERE mlevel IN ('A1', 'B1', 'C1', 'D1') AND id = 'itwill';
+
+INSERT INTO friends(id, passwd, mname, tel, email, zipcode, address1, address2, job, hope, mlevel, mdate)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'D1', sysdate)
+
+UPDATE friens
+SET passwd = ? 
+WHERE mname = ? AND email = ?

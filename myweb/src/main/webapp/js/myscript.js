@@ -213,4 +213,28 @@ function memberCheck() { // 회원가입 유효성 검사
 	} // if end
 	
 	return true;
-}
+} // memberCheck() end
+
+function pwCheck2(){
+	let passwd = document.getElementById("passwd").value;
+	passwd = passwd.trim();
+	if(passwd.length<5 && passwd.length>10){
+		alert("비밀번호는 5글자~10글자 사이로 입력해주세요");
+		document.getElementById("passwd").focus();
+		return false;
+	} // if end
+	
+	let message = "진행된 내용은 복구되지 않습니다\n계속 진행할까요?";
+	if(confirm(message)){ // 확인 true, 취소 false
+		return true;
+	} else {
+		return false;
+	} // if end
+	
+} // pwChechk2() end
+
+function findCheck() {
+	 
+	window.open("findID.jsp", "findwin", "width=400, height=350");
+	
+} // mailCheck() end

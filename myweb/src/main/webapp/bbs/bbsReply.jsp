@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="ssi.jsp" %>
+<%@ include file="auth.jsp" %>
 <%@ include file="../header_bbs.jsp" %>
  <!-- 본문 시작 bbsReply.jsp -->
 	<span class="font2"> 답변 쓰기 </span>
@@ -11,7 +12,7 @@
 			<table class="table table-responsive">
 		<tr>
 		   <th class="font2">작성자</th>
-		   <td><input type="text" name="wname" id="wname" class="form-control font2" maxlength="20" required></td>
+		   <td><input type="text" name="wname" id="wname" class="form-control font2" value="<%=s_id%>" maxlength="20" readonly></td>
 		</tr>
 		<tr>
 		   <th class="font2">제목</th>
@@ -27,8 +28,8 @@
 		</tr>
 		<tr>
 		    <td colspan="2" align="center">
-		       <input type="submit" value="답글 쓰기" class="btn btn-success btn-block hg">
-		       <input type="reset"  value="취소" class="btn btn-danger btn-block hg">
+		       <input type="submit" value="답글 쓰기" class="btn btn-default btn-block hg">
+		       <input type="reset"  value="취소" class="btn btn-default btn-block hg">
 		    </td>
 		</table>	
 		</form>

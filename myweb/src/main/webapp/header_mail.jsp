@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../member/auth.jsp" %>
+<%@ include file="../mail/auth.jsp" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -42,7 +42,7 @@
         <li><a class="font2" href="../bbs/bbsList.jsp">게시판</a></li>
         <li><a class="font2" href="../notice/noticeList.jsp">공지사항</a></li>
         <li><a class="font2" href="../pds/pdsList.jsp">포토갤러리</a></li>
-        <li><a class="font2" href="../mail/mailForm.jsp">메일보내기</a></li>
+        <li><a class="font2" href="./mailForm.jsp">메일보내기</a></li>
 <%
 	if(s_id.equals("guest") || s_passwd.equals("guest") || s_mlevel.equals("guest")){ 
 	// 아이디 저장 쿠키 확인 ---------------------------------------------------

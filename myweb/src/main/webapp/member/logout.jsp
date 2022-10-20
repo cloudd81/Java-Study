@@ -9,6 +9,6 @@
 	session.removeAttribute("s_mlevel");
 	
 	// 페이지 이동
-	response.sendRedirect("loginForm.jsp");
+	response.sendRedirect("../index.jsp");
 	
 %>

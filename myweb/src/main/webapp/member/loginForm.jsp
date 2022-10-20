@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="auth.jsp" %>
+
 <%@ include file="../header_mem.jsp" %>
  <!-- 본문 시작 loginForm.jsp -->
  
@@ -27,8 +27,10 @@
 		    <td>
 			   <input class="font3" type="text" name="id" id="id" value="<%=c_id%>" placeholder="아이디" maxlength="10" required>
 		    </td>
-		    <td rowspan="2">
-			   <input type="image" style="margin: auto; padding-top: 10px; width: 80px;" src="../images/bt_login.gif">		   
+		    <td rowspan="2" style="margin: auto; padding-top: 25px;">
+			   <button type="submit" class="btn btn-default btn-lg">
+			   		<span class="glyphicon glyphicon-log-in"></span> 로그인
+			   </button>
 		    </td>
 		</tr>
 		<tr>
@@ -40,9 +42,9 @@
 		   <td colspan="2" class="font2">
 		      <label><input type="checkbox" name="c_id" value="SAVE" <%if(!c_id.isEmpty()){out.print("checked");}%>> 아이디 저장</label>			  
 			  &nbsp;&nbsp;&nbsp;
-			  <a href="agreement.jsp">회원가입</a>
+			  <a href="agreement.jsp"><button class="btn btn-default">회원가입</button></a>
 			  &nbsp;&nbsp;&nbsp;
-			  <a href="">비밀번호찾기</a>
+			  <input type="button" class="btn btn-default" value="아이디/비밀번호 찾기" onclick="findCheck()">
 		   </td>
 		</tr>		  
 	</table>	
@@ -54,7 +56,7 @@
 %>
 	 <button type='button' class='btn btn-default' onclick="location.href='logout.jsp'">로그아웃</button>
 	 <button type='button' class='btn btn-default' onclick="location.href='memberModify.jsp'">회원정보수정</button>
-	 <button type='button' class='btn btn-default' onclick="location.href='memberWithdraw.jsp'">회원탈퇴</button>
+	 <button type='button' class='btn btn-default' onclick="location.href='memberWithdraw.jsp?id=<%=s_id%>'">회원탈퇴</button>
 <%
  } // if end
 

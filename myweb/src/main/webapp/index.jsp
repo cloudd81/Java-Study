@@ -1,6 +1,7 @@
 <%@page import="java.time.Clock"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="./member/auth.jsp" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,7 +26,7 @@
 <body>
  
 <!-- 메인 카테고리 시작 -->
-<nav id="indexbg" class="navbar navbar-default" style="background-color: #21201d;">
+<nav id="indexbg" class="navbar navbar-default">
 <div id="topbg" class="container-fluid text-center" style="background-image: url('./images/miniproj/topbg.png');">
   	<a href="<%=request.getContextPath()%>/index.jsp">
   		<img class="img-responsive" alt="ozlogo" src="./images/miniproj/logo.png" width="200px;" style="display:inline;">
@@ -45,9 +46,6 @@
         <li><a class="font2" href="./notice/noticeList.jsp">공지사항</a></li>
         <li><a class="font2" href="./pds/pdsList.jsp">포토갤러리</a></li>
         <li><a class="font2" href="./mail/mailForm.jsp">메일보내기</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li><a class="font2" href="./member/loginForm.jsp"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
     </ul>
     </div>
 </div>
@@ -106,18 +104,58 @@
 		</div><!-- myCarousel End -->
 	</div>
 	<div class="container-fluid col-sm-3 col-lg-4 hidden-xs">
+<%
+	if(s_id.equals("guest") || s_passwd.equals("guest") || s_mlevel.equals("guest")){ 
+	// 아이디 저장 쿠키 확인 ---------------------------------------------------
+	Cookie[] cookies = request.getCookies(); // 사용자 pc에 저장된 모든 쿠키값 가져오기
+	String c_id = "";
+	if(cookies!=null){ // 쿠키가 존재하는지?
+		for(int i=0; i<cookies.length; i++){
+			Cookie cookie = cookies[i]; // 쿠키 하나씩 가져오기
+			if(cookie.getName().equals("c_id")==true){
+				c_id = cookie.getValue();	
+			} // if end
+		} // for end
+	} // if end
+	
+	// ------------------------------------------------------------------	 
+ %>
 		<table class="table table-striped">
+			<tr style="text-align: center;">
+		    	<td onClick="location.href='./member/loginForm.jsp'" style="cursor:pointer; height: 100px; padding-top: 35px;">
+			    	<span class="glyphicon glyphicon-log-in"></span> 로그인
+		    	</td>	
+		    </tr>
+		</table>
+<%
+ 	} else {
+	 // 로그인에 성공했다면
+%>		
+		<table class="table table-default">
 			<tr>
-				<td class="font2" style="text-align: center;">
-	    			회원정보
-	    		</td>
-	    	</tr>
-	    	<tr class="text-center font2" id="clock">
-	    		<td>
-		        	<script type="text/javascript">showtime()</script>
-		        </td>
+				<td colspan="2" style="text-align: center;">
+					<%=s_id%>님
+				</td>
+			</tr>
+			<tr>
+	 			<td style="text-align: center;">
+	 				<button type='button' class='btn btn-default' onclick="location.href='./member/logout.jsp'">
+	 					<span class="glyphicon glyphicon-log-out" style="margin-right: 4px;"></span>로그아웃
+	 				</button>
+	 			</td>
+	 			<td style="text-align: center;">
+					<button type='button' class='btn btn-default' onclick="location.href='./member/memberModify.jsp'">회원정보수정</button>
+				</td>
+	 		</tr>
+	 		<tr>
+				<td colspan="2" style="text-align: center;">
+					<button type='button' class='btn btn-default' onclick="location.href='./member/memberWithdraw.jsp?id=<%=s_id%>'">회원탈퇴</button>
+				</td>
 	    	</tr>
         </table>
+<%
+ } // if end
+%>
 	</div>
 	</div><!-- row end -->
 </div>
@@ -125,6 +163,7 @@
 </div><!-- First Container End -->
 
 <!-- Content 시작 -->
+<!-- 도로시와 친구들 소개 -->
 <div class="container-fluid text-center">
     <div class="row">
         <!-- 본문 시작 -->
@@ -152,12 +191,25 @@
         </div>
         <!-- 본문 끝 -->
     </div> <!-- row 끝 -->
-</div> <!-- Second Container 끝 -->
+</div> <!-- 도로시와 친구들 끝 -->
+
+<!-- 시계 출력하기 -->
+<div class="container-fluid font2 margin col-lg-12" id="clock">
+	<div class="row">
+	<table>
+    	<tr>
+    		<td>
+	        	<script type="text/javascript">showtime()</script>
+	        </td>
+    	</tr>
+	</table>
+	</div> <!-- row end -->
+</div> <!-- clock end -->
 <!-- Content 끝 -->
 
 <!-- Footer 시작 -->
-<footer id="indexbg" class="container-fluid text-center"  style="background-color: #21201d;">
-	<p style="color: white; text-shadow: 2px 2px 3px gray;">Copyright &copy; 김경환 cloudd81</p> 
+<footer id="indexbg" class="container-fluid text-center">
+	<p style="color: #F1F1F1;">Copyright &copy; 김경환 cloudd81</p> 
 </footer>
 <!-- Footer 끝 -->    
 

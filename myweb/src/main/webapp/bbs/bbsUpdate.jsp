@@ -37,8 +37,8 @@
 		</tr>
 		<tr>
 		    <td colspan="2" align="center">
-		       <input type="submit" value="수정" class="btn btn-success btn-block hg">
-		       <input type="reset"  value="취소" class="btn btn-danger btn-block hg">
+		       <input type="submit" value="수정" class="btn btn-default btn-block hg">
+		       <input type="reset"  value="취소" class="btn btn-default btn-block hg">
 		    </td>
 		</table>	
 		</form>

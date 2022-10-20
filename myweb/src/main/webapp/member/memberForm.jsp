@@ -10,7 +10,7 @@
 <div class="container">
 <div class="col-lg-2"></div>
 <div class="col-lg-8">
-<table class="table">
+<table class="table table-default">
 <tr>
     <th>*아이디</th>
     <td style="text-align: left">
@@ -61,13 +61,20 @@
   <td style="text-align: left">
         <select name="job"  id="job">
           <option value="0">선택하세요.</option>
-          <option value="A01">회사원</option>
-          <option value="A02" selected>IT관련직</option>
-          <option value="A03">학생</option>
-          <option value="A04">주부</option>
+          <option value="A01">칼쟁이</option>
+          <option value="A02" selected>마법나부랭이</option>
+          <option value="A03">활쟁이</option>
+          <option value="A04">고기방패</option>
           <option value="A05">기타</option>
         </select>
   </td>
+</tr>
+<tr style="height: 100px;">
+  <th colspan="2" class="font1" style="padding-top: 35px;">서쪽 마녀를 쓰러뜨리면 오즈의 마법사가 당신의 소원을 이뤄줄 것입니다</th>
+</tr>
+<tr>
+  <th>당신의 소원은?</th>
+  <td style="text-align: left"><input type="text" name="hope" id="hope" size="45" required></td>
 </tr>
 <tr>
     <td colspan="2">

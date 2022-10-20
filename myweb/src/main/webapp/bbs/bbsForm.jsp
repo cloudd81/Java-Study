@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="auth.jsp" %>
 <%@ include file="../header_bbs.jsp" %>
  <!-- 본문 시작 -->
 	<div class="container">
@@ -9,7 +10,7 @@
 		<table class="table table-striped">
 		<tr>
 		   <th class="font2">작성자</th>
-		   <td><input type="text" name="wname" id="wname" class="form-control font2" maxlength="20" required></td>
+		   <td><input type="text" name="wname" id="wname" class="form-control font2" value="<%=s_id%>" maxlength="20" readonly></td>
 		</tr>
 		<tr>
 		   <th class="font2">제목</th>
@@ -25,8 +26,8 @@
 		</tr>
 		<tr>
 		    <td colspan="2" align="center">
-		       <input type="submit" value="쓰기" class="btn btn-success btn-block font2">
-		       <input type="reset"  value="취소" class="btn btn-danger btn-block font2">
+		       <input type="submit" value="쓰기" class="btn btn-default btn-block font2">
+		       <input type="reset"  value="취소" class="btn btn-default btn-block font2">
 		    </td>
 		</table>	
 		</form>
