@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>basic05_mvc</display-name>
+  
+  <!-- /WEB-INF/web.xml 배치 관리자 -->
+  <!-- 환경 설정에 관한 내용을 담고 있음 -->
+  <!-- 주의 사항 : web.xml이 수정되면 반드시 서버를 재시작해야한다. -->
+  
+  <!-- 첫 페이지(index.jsp) 자동 호출 등록 -->  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 세션 시간 등록(20분) -->
+  <session-config>
+  	<session-timeout>20</session-timeout>
+  </session-config>
+  
+  <!-- 에러가 발생했을 때 이동할 페이지를 지정 -->
+  
+  <!-- HTTP 상태 404 - 찾을 수 없음 -->
+  <!-- 예) http://localhost:9090/basic05_mvc/error/errorList.jsp 가 없는 페이지면 404 발생 -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/404code.jsp</location>
+  </error-page>
+  
+  <!-- HTTP 상태 500 -->
+  <!-- 예) http://localhost:9090/basic05_mvc/error/errorTest.jsp -->
+  <!-- 	  ? 뒤에 Query String 값으로 kor 값을 넘기지 않음 -->
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/500code.jsp</location>
+  </error-page>
+  
+  <!-- Welcome 서블릿 등록 -->
+  <servlet>
+  	<servlet-name>kim</servlet-name>
+  	<servlet-class>net.control.Welcome</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>kim</servlet-name>
+  	<url-pattern>/wel.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- LifeCycle서블릿(HttpServlet 생명주기) 등록 -->
+  <servlet>
+  	<servlet-name>son</servlet-name>
+  	<servlet-class>net.control.LifeCycle</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>son</servlet-name>
+  	<url-pattern>/life.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- loginForm.jsp 서블릿 등록 -->
+  <servlet>
+  	<servlet-name>login</servlet-name>
+  	<servlet-class>net.control.LoginForm</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>login</servlet-name>
+  	<url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- LoginProc.java 서블릿 등록 -->
+  <servlet>
+  	<servlet-name>loginproc</servlet-name>
+  	<servlet-class>net.control.LoginProc</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>loginproc</servlet-name>
+  	<url-pattern>/loginproc.do</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
